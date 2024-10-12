@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "510713230907",
+    "project_id": "sneakersdb",
+    "storage_bucket": "sneakersdb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:510713230907:android:11ab9a9ef6350b483f4e1e",
+        "android_client_info": {
+          "package_name": "com.example.sneakermark"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPYTRQL7rJSzdQVjyI98lP5dWE_qU9X2I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

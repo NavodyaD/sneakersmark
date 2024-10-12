@@ -4,15 +4,14 @@ import 'package:sneakersmark/common/helper/navigator/app_navigator.dart';
 import 'package:sneakersmark/common/widgets/appbar/app_bar.dart';
 import 'package:sneakersmark/common/widgets/button/basic_app_button.dart';
 import 'package:sneakersmark/presentation/auth/pages/enter_password.dart';
-import 'package:sneakersmark/presentation/auth/pages/signup.dart';
 
-class SigninPage extends StatelessWidget {
-  const SigninPage({super.key});
+class ForgotPasswordPage extends StatelessWidget {
+  const ForgotPasswordPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const BasicAppbar(hideBack: true,),
+      appBar: const BasicAppbar(),
       body: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: 16,
@@ -26,8 +25,6 @@ class SigninPage extends StatelessWidget {
             _emailField(context),
             const SizedBox(height: 20,),
             _continueButton(context),
-            const SizedBox(height: 20,),
-            _createAccount(context),
           ],
         ),
       ),
@@ -35,8 +32,8 @@ class SigninPage extends StatelessWidget {
   }
 
   Widget _signinText(BuildContext context) {
-    return const Text('Sign in', style: TextStyle(
-      fontSize: 32, fontWeight: FontWeight.bold
+    return const Text('Forgot Password', style: TextStyle(
+        fontSize: 32, fontWeight: FontWeight.bold
     ),);
   }
 
@@ -53,27 +50,6 @@ class SigninPage extends StatelessWidget {
       AppNavigator.push(context, const EnterPasswordPage()
       );
     },
-    title: 'Continue',);
-  }
-  
-  Widget _createAccount(BuildContext context) {
-    return RichText(
-      text: TextSpan(
-        children: [
-          const TextSpan(
-            text: "Don't you have an account?"
-          ),
-          TextSpan(
-              text: 'Create One',
-            recognizer: TapGestureRecognizer()..onTap = () {
-              AppNavigator.push(context, const SignupPage());
-            },
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
-            )
-          )
-        ]
-      ),
-    );
+      title: 'Continue',);
   }
 }
