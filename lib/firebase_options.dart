@@ -42,46 +42,47 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyA_uZ6uOXZgPI6SdDg7KrWwjwkBFmiLSgM',
-    appId: '1:510713230907:web:f9b42b4260dafebb3f4e1e',
-    messagingSenderId: '510713230907',
-    projectId: 'sneakersdb',
-    authDomain: 'sneakersdb.firebaseapp.com',
-    storageBucket: 'sneakersdb.appspot.com',
+    apiKey: 'AIzaSyCEioyzuiNoh0ZpNLP7-yXjue1nFZYL0uk',
+    appId: '1:571022700005:web:1bc9c2e2881a21dff6d30c',
+    messagingSenderId: '571022700005',
+    projectId: 'storesneaker',
+    authDomain: 'storesneaker.firebaseapp.com',
+    storageBucket: 'storesneaker.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAPYTRQL7rJSzdQVjyI98lP5dWE_qU9X2I',
-    appId: '1:510713230907:android:11ab9a9ef6350b483f4e1e',
-    messagingSenderId: '510713230907',
-    projectId: 'sneakersdb',
-    storageBucket: 'sneakersdb.appspot.com',
+    apiKey: 'AIzaSyC9MP7aDu3JD5khZLHcHki1fiqNcQvquEo',
+    appId: '1:571022700005:android:c03b1fa3b9ae86a9f6d30c',
+    messagingSenderId: '571022700005',
+    projectId: 'storesneaker',
+    storageBucket: 'storesneaker.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAguO2hap4KviKWvQQ4ZzoJ0LxOYxft_sw',
-    appId: '1:510713230907:ios:33d1eee10b696c373f4e1e',
-    messagingSenderId: '510713230907',
-    projectId: 'sneakersdb',
-    storageBucket: 'sneakersdb.appspot.com',
+    apiKey: 'AIzaSyD-6gmGcAalYaZvdnk3D56kSYMvJViqC_E',
+    appId: '1:571022700005:ios:e2f9df6419ac43e7f6d30c',
+    messagingSenderId: '571022700005',
+    projectId: 'storesneaker',
+    storageBucket: 'storesneaker.appspot.com',
     iosBundleId: 'com.example.sneakersmark',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyAguO2hap4KviKWvQQ4ZzoJ0LxOYxft_sw',
-    appId: '1:510713230907:ios:33d1eee10b696c373f4e1e',
-    messagingSenderId: '510713230907',
-    projectId: 'sneakersdb',
-    storageBucket: 'sneakersdb.appspot.com',
+    apiKey: 'AIzaSyD-6gmGcAalYaZvdnk3D56kSYMvJViqC_E',
+    appId: '1:571022700005:ios:e2f9df6419ac43e7f6d30c',
+    messagingSenderId: '571022700005',
+    projectId: 'storesneaker',
+    storageBucket: 'storesneaker.appspot.com',
     iosBundleId: 'com.example.sneakersmark',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyA_uZ6uOXZgPI6SdDg7KrWwjwkBFmiLSgM',
-    appId: '1:510713230907:web:254eb1027e83737a3f4e1e',
-    messagingSenderId: '510713230907',
-    projectId: 'sneakersdb',
-    authDomain: 'sneakersdb.firebaseapp.com',
-    storageBucket: 'sneakersdb.appspot.com',
+    apiKey: 'AIzaSyCEioyzuiNoh0ZpNLP7-yXjue1nFZYL0uk',
+    appId: '1:571022700005:web:f4063922d7910307f6d30c',
+    messagingSenderId: '571022700005',
+    projectId: 'storesneaker',
+    authDomain: 'storesneaker.firebaseapp.com',
+    storageBucket: 'storesneaker.appspot.com',
   );
+
 }
