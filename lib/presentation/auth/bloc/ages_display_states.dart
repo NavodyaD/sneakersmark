@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+// There are 3 states. Ages Loading, Loaded Ages, Ages Load Failure
+
 abstract class AgesDisplayState {}
 
 class AgesLoading extends AgesDisplayState {}

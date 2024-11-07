@@ -41,6 +41,7 @@ class Ages extends StatelessWidget {
     );
   }
 
+  // Ages list view
   Widget _ages(List<QueryDocumentSnapshot<Map<String, dynamic>>> ages) {
     return ListView.separated(
         padding: const EdgeInsets.all(16),
@@ -48,6 +49,7 @@ class Ages extends StatelessWidget {
           return GestureDetector(
             onTap: (){
               Navigator.pop(context);
+              // Get the selected age by AgeSelectionCubit
               context.read<AgeSelectionCubit>().selectAge(
                 ages[index].data()['value'],
               );

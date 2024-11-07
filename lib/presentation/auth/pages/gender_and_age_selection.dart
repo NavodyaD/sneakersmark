@@ -35,6 +35,7 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
         child: BlocListener<ButtonStateCubit,ButtonState>(
           listener: (context, state) {
             if (state is ButtonFailureState){
+              // Show a snack bar to display the error msg in button failure state
               var snackbar = SnackBar(content: Text(state.errorMessage),behavior: SnackBarBehavior.floating,);
               ScaffoldMessenger.of(context).showSnackBar(snackbar);
             }

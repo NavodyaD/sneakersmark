@@ -6,6 +6,7 @@ import '../models/user_creation_req.dart';
 
 abstract class AuthFirebaseService {
   Future<Either> signup(UserCreationReq user);
+  Future<Either> getAges();
 }
 
 class AuthFirebaseServiceImpl extends AuthFirebaseService {
@@ -17,7 +18,7 @@ class AuthFirebaseServiceImpl extends AuthFirebaseService {
         password: user.password!,
       );
       await FirebaseFirestore.instance.collection('Users').doc(
-        returnedData.user!.uid
+        data.user!.uid
       ).set(
         {
           'firstName' : user.firstName,
@@ -42,6 +43,20 @@ class AuthFirebaseServiceImpl extends AuthFirebaseService {
       }
 
       return Left(message);
+    }
+  }
+
+  @override
+  Future<Either> getAges() async {
+    try {
+      var returnedData = await FirebaseFirestore.instance.collection('Ages').get();
+      return Right(
+          returnedData.docs
+      );
+    } catch (e) {
+      return const Left(
+          'Please try select your age again'
+      );
     }
   }
   

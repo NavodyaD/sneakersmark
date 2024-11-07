@@ -6,6 +6,7 @@ import '../../../service_locator.dart';
 
 class AgesDisplayCubit extends Cubit<AgesDisplayState> {
 
+  // Initial State - Loading
   AgesDisplayCubit() : super(AgesLoading());
 
   void displayAges() async {
@@ -14,11 +15,13 @@ class AgesDisplayCubit extends Cubit<AgesDisplayState> {
 
     returnedData.fold(
             (message) {
+              // Left Side - Failure State
           emit(
               AgesLoadFailure(message: message)
           );
         },
             (data) {
+              // Right Side - Success State - Load ages with our data
           emit(
               AgesLoaded(ages: data)
           );

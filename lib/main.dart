@@ -5,12 +5,14 @@ import 'package:sneakersmark/core/configs/theme/app_theme.dart';
 import 'package:sneakersmark/firebase_options.dart';
 import 'package:sneakersmark/presentation/splash/bloc/splash_cubit.dart';
 import 'package:sneakersmark/presentation/splash/pages/splash.dart';
+import 'package:sneakersmark/service_locator.dart';
 
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform
   );
+  await initializeDependencies();
   runApp(const MyApp());
 }
 

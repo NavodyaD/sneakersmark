@@ -66,7 +66,7 @@ class SigninPage extends StatelessWidget {
           TextSpan(
               text: 'Create One',
             recognizer: TapGestureRecognizer()..onTap = () {
-              AppNavigator.push(context, const SignupPage());
+              AppNavigator.push(context, SignupPage());
             },
             style: const TextStyle(
               fontWeight: FontWeight.bold,
