@@ -17,7 +17,7 @@ class SplashPage extends StatelessWidget {
           Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                  builder: (context) => const SigninPage()
+                  builder: (context) => SigninPage()
               )
           );
         }
@@ -25,7 +25,7 @@ class SplashPage extends StatelessWidget {
       child: const Scaffold(
         backgroundColor: AppColors.primary,
         body: Center(
-          child: const Text("Sneakersmark"),
+          child: Text("Sneakersmark"),
         ),
       ),
     );

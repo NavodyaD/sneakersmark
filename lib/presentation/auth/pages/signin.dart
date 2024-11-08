@@ -3,11 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:sneakersmark/common/helper/navigator/app_navigator.dart';
 import 'package:sneakersmark/common/widgets/appbar/app_bar.dart';
 import 'package:sneakersmark/common/widgets/button/basic_app_button.dart';
+import 'package:sneakersmark/data/auth/models/user_signin_req.dart';
 import 'package:sneakersmark/presentation/auth/pages/enter_password.dart';
 import 'package:sneakersmark/presentation/auth/pages/signup.dart';
 
 class SigninPage extends StatelessWidget {
-  const SigninPage({super.key});
+  SigninPage({super.key});
+
+  final TextEditingController _emailCon = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -41,8 +44,9 @@ class SigninPage extends StatelessWidget {
   }
 
   Widget _emailField(BuildContext context) {
-    return const TextField(
-      decoration: InputDecoration(
+    return TextField(
+      controller: _emailCon,
+      decoration: const InputDecoration(
         hintText: 'Enter Email',
       ),
     );
@@ -50,7 +54,10 @@ class SigninPage extends StatelessWidget {
 
   Widget _continueButton(BuildContext context) {
     return BasicAppButton(onPressed: () {
-      AppNavigator.push(context, const EnterPasswordPage()
+      AppNavigator.push(context, EnterPasswordPage(
+        // Transfer Email to EnterPassword Page
+        signinReq: UserSigninReq(email: _emailCon.text,),
+      )
       );
     },
     title: 'Continue',);

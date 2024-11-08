@@ -1,11 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:sneakersmark/data/auth/models/user_signin_req.dart';
 
 import '../models/user_creation_req.dart';
 
 abstract class AuthFirebaseService {
   Future<Either> signup(UserCreationReq user);
+  Future<Either> signin(UserSigninReq user);
   Future<Either> getAges();
 }
 
@@ -13,6 +15,7 @@ class AuthFirebaseServiceImpl extends AuthFirebaseService {
   @override
   Future<Either> signup(UserCreationReq user) async {
     try {
+      // For signup: createUserWithEmailAndPassword
       var data = await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: user.email!,
         password: user.password!,
@@ -57,6 +60,33 @@ class AuthFirebaseServiceImpl extends AuthFirebaseService {
       return const Left(
           'Please try select your age again'
       );
+    }
+  }
+
+  @override
+  Future<Either> signin(UserSigninReq user) async {
+    try {
+      // For sign in: signInWithEmailAndPassword
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: user.email!,
+        password: user.password!,
+      );
+
+
+      return const Right(
+          'Signin was successful'
+      );
+
+    } on FirebaseAuthException catch(e) {
+      String message = '';
+
+      if(e.code == 'invalid-email') {
+        message = 'Not user found for this email';
+      } else if (e.code == 'invalid-credential') {
+        message = 'Wrong password provided for this user';
+      }
+
+      return Left(message);
     }
   }
   
