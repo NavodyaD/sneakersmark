@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sneakersmark/common/helper/navigator/app_navigator.dart';
 import 'package:sneakersmark/presentation/auth/pages/signin.dart';
+import 'package:sneakersmark/presentation/home/pages/home.dart';
 import 'package:sneakersmark/presentation/splash/bloc/splash_state.dart';
 
 import '../../../core/configs/theme/app_colors.dart';
@@ -14,12 +16,10 @@ class SplashPage extends StatelessWidget {
     return BlocListener<SplashCubit,SplashState>(
       listener:  (context, state) {
         if(state is UnAuthenticated) {
-          Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => SigninPage()
-              )
-          );
+          AppNavigator.pushReplacement(context, SigninPage());
+        }
+        if(state is Authenticated) {
+          AppNavigator.pushReplacement(context, HomePage());
         }
       },
       child: const Scaffold(

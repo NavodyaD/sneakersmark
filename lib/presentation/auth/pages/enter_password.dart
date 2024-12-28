@@ -11,6 +11,8 @@ import 'package:sneakersmark/data/auth/models/user_signin_req.dart';
 import 'package:sneakersmark/domain/auth/usecases/signin.dart';
 import 'package:sneakersmark/presentation/auth/pages/forgot_password.dart';
 
+import '../../home/pages/home.dart';
+
 class EnterPasswordPage extends StatelessWidget {
   final UserSigninReq signinReq;
   EnterPasswordPage({
@@ -39,9 +41,9 @@ class EnterPasswordPage extends StatelessWidget {
                 var snackbar = SnackBar(content: Text(state.errorMessage),behavior: SnackBarBehavior.floating,);
                 ScaffoldMessenger.of(context).showSnackBar(snackbar);
               }
-              // Button Success State
+              // Button Success State - go to home page
               if (state is ButtonSuccessState) {
-                //AppNavigator.pushAndRemove(context, const HomePage());
+                AppNavigator.pushAndRemove(context, const HomePage());
               }
             },
             child: Column(
