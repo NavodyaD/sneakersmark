@@ -21,6 +21,7 @@ class SplashPage extends StatelessWidget {
         if(state is Authenticated) {
           AppNavigator.pushReplacement(context, HomePage());
         }
+
       },
       child: const Scaffold(
         backgroundColor: AppColors.primary,
