@@ -120,9 +120,9 @@ class AuthFirebaseServiceImpl extends AuthFirebaseService {
   Future<Either> getUser() async {
     try {
       var currentUser = FirebaseAuth.instance.currentUser;
-      var userData = FirebaseFirestore.instance.collection('Users').doc(
+      var userData = await FirebaseFirestore.instance.collection('Users').doc(
           currentUser?.uid
-      ).get();
+      ).get().then((value) => value.data()); 
       return Right(
           userData
       );

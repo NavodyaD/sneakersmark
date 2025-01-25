@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:sneakersmark/data/auth/models/user.dart';
 import 'package:sneakersmark/data/auth/models/user_creation_req.dart';
 import 'package:sneakersmark/data/auth/models/user_signin_req.dart';
 import 'package:sneakersmark/data/auth/source/auth_firebase_service.dart';
@@ -33,9 +34,19 @@ class AuthRepositoryImpl extends AuthRepository {
   }
 
   @override
-  Future<Either> getUser() {
-    // TODO: implement getUser
-    throw UnimplementedError();
+  Future<Either> getUser() async {
+    var user = await sl<AuthFirebaseService>().getUser();
+    return user.fold(
+      (error) {
+        return Left(error);
+
+      },
+        (data) {
+        return Right(
+          UserModel.fromJson(data).toEntity()
+        );
+
+        } );
   }
 
 }
