@@ -18,7 +18,7 @@ class CategoryRepositoryImpl extends CategoryRepository {
         // Right side
         (data) {
           return Right(
-            CategoryModel.fromMap(data)
+            CategoryModel.fromMap(data).toEntity()
           );
         }
     );

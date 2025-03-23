@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 
 // contract class
-abstract class CategoryRepository {
+abstract class  CategoryRepository {
 
   Future<Either> getSneakerCategories();
 }

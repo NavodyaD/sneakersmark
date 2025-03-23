@@ -11,6 +11,7 @@ import 'package:sneakersmark/domain/auth/usecases/send_pw_reset_email.dart';
 import 'package:sneakersmark/domain/auth/usecases/signin.dart';
 import 'package:sneakersmark/domain/auth/usecases/signup.dart';
 import 'package:sneakersmark/domain/category/repository/category.dart';
+import 'package:sneakersmark/domain/category/usecase/get_categories.dart';
 
 final sl = GetIt.instance;
 
@@ -56,5 +57,9 @@ Future<void> initializeDependencies() async {
 
   sl.registerSingleton<GetUserUseCase>(
       GetUserUseCase()
+  );
+
+  sl.registerSingleton<GetSneakerCategoriesUseCase>(
+      GetSneakerCategoriesUseCase()
   );
 }
